@@ -16,7 +16,7 @@ This is the front-end website that uses the Astro framework and also pulls data 
   - From there, volta will have auto configured the correct Node & pnpm versions needed.
 - Add ENV Variable
   - Create a .env file in the root of your project and add the following line:
-  ```env ASTRO_GRAPHQL_ENDPOINT=https://f3rapidcity.com/graphql```
+  ```ASTRO_GRAPHQL_ENDPOINT=https://f3rapidcity.com/graphql```
 
 ### Node & pnpm: The Slow Way
 
@@ -24,7 +24,7 @@ This is the front-end website that uses the Astro framework and also pulls data 
 - Install [pnpm v9.x](https://pnpm.io/installation)
 - Add ENV Variable
   - Create a .env file in the root of your project and add the following line:
-  ```env ASTRO_GRAPHQL_ENDPOINT=https://f3rapidcity.com/graphql```
+  ```ASTRO_GRAPHQL_ENDPOINT=https://f3rapidcity.com/graphql```
 
 # Astro Basics
 
