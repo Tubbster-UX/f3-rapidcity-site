@@ -3333,6 +3333,7 @@
         "npm:@astrojs/node@^8.3.4",
         "npm:@astrojs/react@^3.6.2",
         "npm:@astrojs/tailwind@^5.1.2",
+        "npm:@fontsource-variable/noto-sans@^5.1.0",
         "npm:@fontsource-variable/oswald@^5.1.0",
         "npm:@radix-ui/react-slot@^1.1.0",
         "npm:@types/react-dom@^18.3.1",
