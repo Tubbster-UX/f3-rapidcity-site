@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/oswald";
 import "@fontsource-variable/noto-sans";
+import MobileNavigation from "@/components/mobileNavigation.tsx";
 
 interface Props {
 	title: string;
@@ -25,8 +26,15 @@ import "@/styles/globals.css";
 			<a href="/" class="flex justify-center">
 				<img id="logo" src="/images/f3_rc_logo.png" alt="site logo" class="w-3/4 md:w-[300px] pb-4" />
 			</a>
-			<nav class="font-noto-sans font-bold">
-				<a href="/">Home</a>
+			<nav class="flex flex-row justify-end w-full gap-8 md:gap-4 font-noto-sans font-bold">
+				<div class="hidden md:block">
+					<a href="/">Home</a>
+					<!-- todo: add other pages -->
+				</div>
+				<div class="md:hidden">
+					<!-- auto-mounts only on mobile -->
+					<MobileNavigation client:visible />
+				</div>
 			</nav>
 		</header>
 		<main>
