@@ -2,6 +2,13 @@
   "name": "",
   "type": "module",
   "version": "0.0.1",
+  "volta": {
+    "node": "20.18.0",
+    "pnpm": "9.12.2"
+  },
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
