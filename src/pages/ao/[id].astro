@@ -1,9 +1,6 @@
 ---
-import { GraphQLClient } from "graphql-request";
 import Layout from "@/layouts/Layout.astro";
-
-// Create a new GraphQL client with the Hygraph endpoint
-const client = new GraphQLClient("https://f3rapidcity.com/graphql");
+import { fetchGraphQL } from "@/utils/graphqlClient";
 
 // Declare AO type
 type AO = {
@@ -27,7 +24,7 @@ type AO = {
 const { id } = Astro.params;
 
 // Fetch the data via the GraphQL query
-const { aO }: AO = await client.request(
+const { aO }: AO = await fetchGraphQL(
   `
 query NewQuery($id: ID!) {
   aO(id: $id, idType: SLUG) {
@@ -52,7 +49,9 @@ console.log(aO);
 ---
 
 <Layout title={`${aO?.title} AO`}>
-  <div class="relative flex justify-center items-center h-80 bg-cover bg-center" style={`background-image: url(${aO?.featuredImage?.node?.mediaItemUrl})`}>
+  <div
+    class="relative flex justify-center items-center h-80 bg-cover bg-center bg-[url('/img/ao-hero.jpg')]"
+  >
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <h1 class="relative text-primary font-extrabold text-5xl">{aO?.title}</h1>
   </div>
@@ -64,14 +63,13 @@ console.log(aO);
     <h2 class="text-3xl font-bold mt-4 mb-2">Details</h2>
     <div set:html={aO?.aoDetails?.aoDetails} />
 
-    <div class="mt-10 mb-2">
+    <div class="flex justify-center mt-10 mb-2">
       <iframe
-        width="100%"
-        height="450"
+        class="w-full md:w-3/4 h-96 md:h-450"
         frameborder="0"
         style="border:0"
         src={aO?.aoDetails?.googleMapEmbed}
-        allowfullscreen
-      ></iframe>
+        allowfullscreen></iframe>
+    </div>
   </div>
 </Layout>
