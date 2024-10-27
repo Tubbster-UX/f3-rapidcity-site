@@ -1,24 +1,91 @@
 ---
-import { fetchGraphQL } from "@/utils/graphqlClient"
+import Layout from "@/layouts/Layout.astro";
+import { fetchGraphQL } from "@/utils/graphqlClient";
 
-type Location = {
-  location: {
-    title: string
-    locationDetails: {
-      locationAddress: string
-      locationDetails: string
-      locationAddressLabel: string
-      googleMapEmbed: string
-    }
-    featuredImage: {
-      node: {
-        mediaItemUrl: string
+type LocationNode = {
+  slug: string;
+  title: string;
+  aoDetails: {
+    active: boolean;
+    aoAddress: string;
+    aoAddressLabel: string;
+    aoDetails: string;
+  };
+  featuredImage: {
+    node: {
+      mediaItemUrl: string;
+    };
+  } | null;
+};
+
+type Locations = {
+  aOs: {
+    nodes: LocationNode[];
+  };
+};
+
+const { aOs }: Locations = await fetchGraphQL(
+  `
+  query NewQuery {
+    aOs {
+      nodes {
+        aoDetails {
+          active
+          aoAddress
+          aoAddressLabel
+          aoDetails
+        }
+        slug
+        title
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
       }
     }
   }
-}
+  `,
+);
+
+const activeLocations = aOs.nodes.filter((ao) => ao.aoDetails.active);
+
+console.log(JSON.stringify(activeLocations, null, 2));
 ---
 
-<div>
+<Layout title="Locations">
+  <div>
+    <h1 class="text-center text-3xl font-semibold py-4">COME OUT AND JOIN US FOR A WORKOUT!</h1>
 
-</div>
+    <h2 class="text-primary text-center text-3xl font-bold pt-10">Locations</h2>
+
+    <div class="flex flex-wrap justify-center">
+      {
+        activeLocations.map((ao) => (
+          <a href={`/ao/${ao.slug}`}>
+            <div class="p-4 shadow-md rounded-lg">
+              {ao.featuredImage && ao.featuredImage.node ? (
+                <img
+                  class="w-full h-48 object-contain"
+                  src={ao.featuredImage.node.mediaItemUrl}
+                  alt={ao.title}
+                />
+              ) : (
+                <img
+                  class="w-full h-48 object-contain"
+                  src="/images/F3-Logo.png"
+                  alt="F3 Nation Logo"
+                />
+              )}
+              <h3 class="mt-4 text-2xl text-center font-semibold text-primary">
+                {ao.title}
+              </h3>
+              <p class="mt-2 text-center text-white">{ao.aoDetails.aoAddress}</p>
+              <div class="mt-2 text-center text-white" set:html={ao.aoDetails?.aoDetails} />
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

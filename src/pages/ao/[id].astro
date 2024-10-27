@@ -48,9 +48,9 @@ query NewQuery($id: ID!) {
 console.log(aO);
 ---
 
-<Layout title={`${aO?.title} AO`}>
+<Layout title={`${aO?.title}`}>
   <div
-    class="relative flex justify-center items-center h-80 bg-cover bg-center bg-[url('/img/ao-hero.jpg')]"
+    class="relative flex justify-center items-center h-80 bg-cover bg-center bg-[url('/images/ao-hero.jpg')]"
   >
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <h1 class="relative text-primary font-extrabold text-5xl">{aO?.title}</h1>
