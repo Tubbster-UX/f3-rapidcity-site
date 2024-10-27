@@ -1,0 +1,24 @@
+---
+import { fetchGraphQL } from "@/utils/graphqlClient"
+
+type Location = {
+  location: {
+    title: string
+    locationDetails: {
+      locationAddress: string
+      locationDetails: string
+      locationAddressLabel: string
+      googleMapEmbed: string
+    }
+    featuredImage: {
+      node: {
+        mediaItemUrl: string
+      }
+    }
+  }
+}
+---
+
+<div>
+
+</div>

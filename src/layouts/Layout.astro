@@ -1,10 +1,12 @@
 ---
+import "@fontsource-variable/oswald";
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 ---
 
 <!doctype html>
@@ -36,8 +38,12 @@ import '@/styles/globals.css'
 	</body>
 </html>
 
-<style>
-	main {
-		min-height: 50vh;
+<style is:global>
+	body {
+		font-family: "Oswald Variable", sans-serif;
 	}
+
+    main {
+        min-height: 50vh;
+    }
 </style>
