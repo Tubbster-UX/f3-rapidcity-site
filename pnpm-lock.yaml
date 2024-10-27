@@ -20,9 +20,6 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.2
         version: 5.1.2(astro@4.16.7(rollup@4.24.0)(typescript@5.6.3))(tailwindcss@3.4.14)
-      '@fontsource-variable/oswald':
-        specifier: ^5.1.0
-        version: 5.1.0
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.12)(react@18.3.1)
@@ -65,6 +62,13 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
+    devDependencies:
+      '@fontsource-variable/noto-sans':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource-variable/oswald':
+        specifier: ^5.1.0
+        version: 5.1.0
 
 packages:
 
@@ -390,6 +394,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/noto-sans@5.1.0':
+    resolution: {integrity: sha512-mLn33cgmryVFjpHoHy/lx6/DsRvp8kbxDmfMbMNl75eY+bVubad3u6oGSCyc8izcSNZAhAlXdoFW7mCnI2l63w==}
 
   '@fontsource-variable/oswald@5.1.0':
     resolution: {integrity: sha512-ZjvLLcT/5HKb3eZDruWyFxIUy9Pg5hV7yu7WTmBrEhVnS6xRMNzY4Zw7ir+x/6xZWeeYkyqff8HGapcn2EUcsw==}
@@ -2707,6 +2714,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource-variable/noto-sans@5.1.0': {}
 
   '@fontsource-variable/oswald@5.1.0': {}
 

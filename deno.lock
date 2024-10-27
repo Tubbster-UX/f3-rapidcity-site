@@ -5,6 +5,7 @@
     "npm:@astrojs/node@^8.3.4": "8.3.4_astro@4.16.7__@babel+core@7.26.0__typescript@5.6.3__vite@5.4.10__zod@3.23.8_typescript@5.6.3",
     "npm:@astrojs/react@^3.6.2": "3.6.2_@types+react@18.3.12_@types+react-dom@18.3.1_react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@astrojs/tailwind@^5.1.2": "5.1.2_astro@4.16.7__@babel+core@7.26.0__typescript@5.6.3__vite@5.4.10__zod@3.23.8_tailwindcss@3.4.14__postcss@8.4.47_postcss@8.4.47_typescript@5.6.3",
+    "npm:@fontsource-variable/noto-sans@^5.1.0": "5.1.0",
     "npm:@fontsource-variable/oswald@^5.1.0": "5.1.0",
     "npm:@radix-ui/react-slot@^1.1.0": "1.1.0_@types+react@18.3.12_react@18.3.1",
     "npm:@types/react-dom@^18.3.1": "18.3.1",
@@ -412,6 +413,9 @@
     },
     "@esbuild/win32-x64@0.21.5": {
       "integrity": "sha512-tQd/1efJuzPC6rCFwEvLtci/xNFcTZknmXs98FYDfGE4wP9ClFV98nyKrzJKVPMhdDnjzLhdUyMX4PsQAPjwIw=="
+    },
+    "@fontsource-variable/noto-sans@5.1.0": {
+      "integrity": "sha512-mLn33cgmryVFjpHoHy/lx6/DsRvp8kbxDmfMbMNl75eY+bVubad3u6oGSCyc8izcSNZAhAlXdoFW7mCnI2l63w=="
     },
     "@fontsource-variable/oswald@5.1.0": {
       "integrity": "sha512-ZjvLLcT/5HKb3eZDruWyFxIUy9Pg5hV7yu7WTmBrEhVnS6xRMNzY4Zw7ir+x/6xZWeeYkyqff8HGapcn2EUcsw=="
