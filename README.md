@@ -4,13 +4,18 @@ This is the front-end website that uses the Astro framework and also pulls data 
 
 ## Prerequisites
 
-### The Fast Way
+- Node v20.18
+- pnpm v9.x
+- [Git LFS](https://git-lfs.com/)
+  - For saving images and other binaries that don't need to be part of git
+
+### Node & pnpm: The Fast Way
 
 - Install [Volta](https://volta.sh/)
   - After install run `volta install node`
   - From there, volta will have auto configured the correct Node & pnpm versions needed.
 
-### The Slow Way
+### Node & pnpm: The Slow Way
 
 - Install [Node v20.18](https://nodejs.org/en)
 - Install [pnpm v9.x](https://pnpm.io/installation)
