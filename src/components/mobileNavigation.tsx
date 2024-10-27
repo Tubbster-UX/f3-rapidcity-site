@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-export default function MobileNavigation() {
+// todo: set default props
+
+export default function MobileNavigation(props) {
     const [showDrawer, setShowDrawer] = useState(false);
 
     return <>
@@ -17,9 +19,13 @@ export default function MobileNavigation() {
                     {/* blank area that triggers close */}
                 </div>
                 {/* menu */}
-                <div className="flex flex-col border-l-2 border-secondary bg-secondary text-primary p-12">
-                    <a href="/">Home</a>
-                    {/* todo: add other pages */}
+                <div className="flex flex-col gap-4 border-l-2 border-secondary bg-secondary text-primary p-12">
+                    {props.menuItems.map((edge) => {
+                        const menuItem = edge.node;
+
+                        // todo: handle nested menu items
+                        return <a href={menuItem.path}>{menuItem.label}</a>
+                    })}
                 </div>
             </div>
         </aside>
