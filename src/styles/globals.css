@@ -32,6 +32,10 @@
         @apply border-border;
     }
 
+    a {
+        @apply text-primary;
+    }
+
     body {
         @apply bg-background text-foreground;
     }
