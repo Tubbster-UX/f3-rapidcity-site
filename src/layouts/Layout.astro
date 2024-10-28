@@ -22,20 +22,20 @@ import "@/styles/globals.css";
 		<title>{title} | F3 Rapid City</title>
 	</head>
 	<body>
-		<header class="flex flex-col md:flex-row items-center justify-center md:justify-between border-b-4 border-primary p-4 md:p-8">
-			<a href="/" class="flex justify-center">
-				<img id="logo" src="/images/f3_rc_logo.png" alt="site logo" class="w-3/4 md:w-[300px] pb-4" />
+		<header class="flex items-center justify-center md:justify-between border-b-4 border-primary p-4 md:p-8">
+			<a href="/" class="flex justify-start">
+				<img id="logo" src="/images/f3_rc_logo.png" alt="site logo" class="w-1/2 md:w-96 pb-4" />
 			</a>
 			<nav class="flex flex-row justify-end w-full gap-8 md:gap-4 font-noto-sans font-bold">
 				<div class="hidden md:block">
 					<a href="/">Home</a>
 					<!-- todo: add other pages -->
 				</div>
-				<div class="md:hidden">
-					<!-- auto-mounts only on mobile -->
-					<MobileNavigation client:visible />
-				</div>
 			</nav>
+			<div class="md:hidden">
+				<!-- auto-mounts only on mobile -->
+				<MobileNavigation client:visible />
+			</div>
 		</header>
 		<main class="p-2">
 			<slot />

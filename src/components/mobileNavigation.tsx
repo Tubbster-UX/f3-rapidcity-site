@@ -1,3 +1,4 @@
+import { MenuIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function MobileNavigation() {
@@ -5,14 +6,10 @@ export default function MobileNavigation() {
 
     return <>
         <button onClick={() => setShowDrawer(!showDrawer)}>
-            <svg fill="white" viewBox="0 0 100 80" width="40" height="40">
-                <rect width="100" height="20"></rect>
-                <rect y="30" width="100" height="20"></rect>
-                <rect y="60" width="100" height="20"></rect>
-            </svg>
+            <MenuIcon className="w-10 h-10" size={24} />
         </button>
         <aside className={`fixed top-0 transition-all duration-300 ${showDrawer ? "left-0" : "left-full"}`}>
-            <div className="grid grid-cols-2 h-[100vh] w-[100vw]">
+            <div className="grid grid-cols-2 h-screen w-screen">
                 <div onClick={() => setShowDrawer(false)}>
                     {/* blank area that triggers close */}
                 </div>
