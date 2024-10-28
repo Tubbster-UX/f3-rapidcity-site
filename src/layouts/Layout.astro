@@ -54,9 +54,9 @@ const mainMenuItems: MenuItemsResponse = await fetchGraphQL(`
 		<title>{title} | F3 Rapid City</title>
 	</head>
 	<body>
-		<header class="flex flex-col md:flex-row items-center justify-center md:justify-between border-b-4 border-primary p-4 md:p-8">
-			<a href="/" class="flex justify-center">
-				<img id="logo" src="/images/f3_rc_logo.png" alt="site logo" class="w-3/4 md:w-[300px] pb-4" />
+		<header class="flex items-center justify-center md:justify-between border-b-4 border-primary p-4 md:p-8">
+			<a href="/" class="flex justify-start">
+				<img id="logo" src="/images/f3_rc_logo.png" alt="site logo" class="w-1/2 md:w-96 pb-4" />
 			</a>
 			<nav class="flex flex-row justify-end w-full gap-8 md:gap-4 font-noto-sans font-bold">
 				<div class="hidden md:flex gap-4">
@@ -66,13 +66,13 @@ const mainMenuItems: MenuItemsResponse = await fetchGraphQL(`
 						return <a href={menuItem.path}>{menuItem.label}</a>
 					})}
 				</div>
-				<div class="md:hidden">
-					<!-- auto-mounts only on mobile -->
-					<MobileNavigation menuItems={mainMenuItems.menuItems.edges} client:visible />
-				</div>
 			</nav>
+			<div class="md:hidden">
+				<!-- auto-mounts only on mobile -->
+				<MobileNavigation client:visible />
+			</div>
 		</header>
-		<main>
+		<main class="p-2">
 			<slot />
 		</main>
 		<footer class="flex flex-col md:flex-row items-center justify-center border-t-4 border-primary p-4 md:p-8">

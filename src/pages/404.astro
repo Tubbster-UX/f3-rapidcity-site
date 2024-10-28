@@ -1,0 +1,18 @@
+---
+import { Button } from "@/components/ui/button";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="404: Not Found">
+    <div class="relative flex-col flex items-center justify-center h-96">
+        <span class="text-9xl font-bold text-zinc-800">404</span>
+        <div class="text-center z-10">
+            <p class="text-3xl">Oops! That page can't be found</p>
+        </div>
+    </div>
+    <div class="flex justify-center mb-20">
+        <a href="/">
+            <Button>Go back home</Button>
+        </a>
+    </div>
+</Layout>

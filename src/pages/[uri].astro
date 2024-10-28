@@ -1,0 +1,39 @@
+---
+import "@/styles/wp-pages.css";
+import Layout from "@/layouts/Layout.astro";
+import { fetchGraphQL } from "@/utils/graphqlClient";
+
+type Page = {
+    page: {
+        id: string;
+        title: string;
+        content: string;
+    };
+};
+
+const { uri } = Astro.params;
+
+const { page }: Page = await fetchGraphQL(
+    `
+    query($uri: ID!) {
+        page(id: $uri, idType: URI) {
+        id
+        title
+        content
+        }
+    }
+    `,
+    { uri },
+);
+
+console.log(page);
+
+if (!page) {
+    return new Response("Page Not Found", { status: 404 });
+}
+
+---
+
+<Layout title={page.title}>
+    <div set:html={page.content} />
+</Layout>
