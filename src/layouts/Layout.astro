@@ -9,6 +9,38 @@ interface Props {
 
 const { title } = Astro.props;
 import "@/styles/globals.css";
+
+
+export type MenuItemsResponse = {
+	menuItems: {
+		edges: Array<{
+			node: {
+				id: string
+				path: string
+				target: any
+				label: string
+			}
+		}>
+	}
+}
+
+import { fetchGraphQL } from "@/utils/graphqlClient";
+
+const mainMenuItems: MenuItemsResponse = await fetchGraphQL(`
+{
+  menuItems(where: {location: MENU_1}) {
+    edges {
+      node {
+        id
+        path
+        target
+        label
+      }
+    }
+  }
+}
+`);
+
 ---
 
 <!doctype html>
@@ -27,9 +59,12 @@ import "@/styles/globals.css";
 				<img id="logo" src="/images/f3_rc_logo.png" alt="site logo" class="w-1/2 md:w-96 pb-4" />
 			</a>
 			<nav class="flex flex-row justify-end w-full gap-8 md:gap-4 font-noto-sans font-bold">
-				<div class="hidden md:block">
-					<a href="/">Home</a>
-					<!-- todo: add other pages -->
+				<div class="hidden md:flex gap-4">
+					{mainMenuItems?.menuItems?.edges?.map((edge) => {
+						const menuItem = edge.node;
+						// todo: handle nested menu items
+						return <a href={menuItem.path}>{menuItem.label}</a>
+					})}
 				</div>
 			</nav>
 			<div class="md:hidden">
