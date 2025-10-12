@@ -49,8 +49,6 @@ const { aOs }: Locations = await fetchGraphQL(
 );
 
 const activeLocations = aOs.nodes.filter((ao) => ao.aoDetails.active);
-
-console.log(JSON.stringify(activeLocations, null, 2));
 ---
 
 <Layout title="Locations">

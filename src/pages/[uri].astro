@@ -26,8 +26,6 @@ const { page }: Page = await fetchGraphQL(
     { uri },
 );
 
-console.log(page);
-
 if (!page) {
     return new Response("Page Not Found", { status: 404 });
 }
