@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import node from '@astrojs/node';
+import checker from 'vite-plugin-checker'
 
 import react from '@astrojs/react';
 
@@ -17,6 +18,14 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-  ]
+  ],
+
+  vite: {
+    plugins: [
+      checker({
+        typescript: true,
+      }),
+    ],
+  }
 
 });
