@@ -1,0 +1,17 @@
+{
+	"formatter": {
+		"indentStyle": "tab", // default is `tab`
+		"lineWidth": 80
+	},
+	"linter": {
+		"rules": {
+			"a11y": "off"
+		}
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "master"
+	}
+}
