@@ -4,27 +4,14 @@ This is the front-end website that uses the Astro framework and also pulls data 
 
 ## Prerequisites
 
-- Node v20.18
-- pnpm v9.x
+- Node 24.x
+  - Recommended way is to install Node via [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file#installation)
+  - Alternative official [Node.js website](https://nodejs.org/en)
+- [pnpm v10.x](https://pnpm.io/installation)
 - [Git LFS](https://git-lfs.com/)
   - For saving images and other binaries that don't need to be part of git
-
-### Node & pnpm: The Fast Way
-
-- Install [Volta](https://volta.sh/)
-  - After install run `volta install node`
-  - From there, volta will have auto configured the correct Node & pnpm versions needed.
-- Add ENV Variable
-  - Create a .env.local file in the root of your project and add the following line:
-  ```ASTRO_GRAPHQL_ENDPOINT=https://f3rapidcity.com/graphql```
-
-### Node & pnpm: The Slow Way
-
-- Install [Node v20.18](https://nodejs.org/en)
-- Install [pnpm v9.x](https://pnpm.io/installation)
-- Add ENV Variable
-  - Create a .env.local file in the root of your project and add the following line:
-  ```ASTRO_GRAPHQL_ENDPOINT=https://f3rapidcity.com/graphql```
+- Environment variable.
+  - Run `cp .env.example .env` in the root of your project to setup environment variables
 
 # Astro Basics
 
