@@ -10,19 +10,18 @@ interface Props {
 const { title } = Astro.props;
 import "@/styles/globals.css";
 
-
 export type MenuItemsResponse = {
 	menuItems: {
 		edges: Array<{
 			node: {
-				id: string
-				path: string
-				target: any
-				label: string
-			}
-		}>
-	}
-}
+				id: string;
+				path: string;
+				target: any;
+				label: string;
+			};
+		}>;
+	};
+};
 
 import { fetchGraphQL } from "@/utils/graphqlClient";
 
@@ -40,7 +39,6 @@ const mainMenuItems: MenuItemsResponse = await fetchGraphQL(`
   }
 }
 `);
-
 ---
 
 <!doctype html>

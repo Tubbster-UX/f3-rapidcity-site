@@ -1,26 +1,22 @@
 ---
-import {
-    Card,
-    CardDescription,
-    CardHeader,
-} from "@/components/ui/card";
+import { Card, CardDescription, CardHeader } from "@/components/ui/card";
 import Layout from "@/layouts/Layout.astro";
 import { fetchGraphQL } from "@/utils/graphqlClient";
 
 type BackblastsPosts = {
-    posts: {
-        nodes: {
-            title: string;
-            date: string;
-            featuredImage: {
-                mediaItemUrl: string;
-            };
-        }[];
-    };
+	posts: {
+		nodes: {
+			title: string;
+			date: string;
+			featuredImage: {
+				mediaItemUrl: string;
+			};
+		}[];
+	};
 };
 
 const { posts }: BackblastsPosts = await fetchGraphQL(
-    `
+	`
     query {
         posts(first: 10) {
             nodes {

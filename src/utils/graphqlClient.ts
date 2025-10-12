@@ -4,6 +4,9 @@ import { GraphQLClient } from "graphql-request";
 const client = new GraphQLClient(import.meta.env.ASTRO_GRAPHQL_ENDPOINT);
 
 // Function to make GraphQL requests
-export const fetchGraphQL = async <T>(query: string, variables?: Record<string, any>): Promise<T> => {
-    return client.request<T>(query, variables);
+export const fetchGraphQL = async <T>(
+	query: string,
+	variables?: Record<string, any>,
+): Promise<T> => {
+	return client.request<T>(query, variables);
 };

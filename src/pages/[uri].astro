@@ -4,17 +4,17 @@ import Layout from "@/layouts/Layout.astro";
 import { fetchGraphQL } from "@/utils/graphqlClient";
 
 type Page = {
-    page: {
-        id: string;
-        title: string;
-        content: string;
-    };
+	page: {
+		id: string;
+		title: string;
+		content: string;
+	};
 };
 
 const { uri } = Astro.params;
 
 const { page }: Page = await fetchGraphQL(
-    `
+	`
     query($uri: ID!) {
         page(id: $uri, idType: URI) {
         id
@@ -23,13 +23,12 @@ const { page }: Page = await fetchGraphQL(
         }
     }
     `,
-    { uri },
+	{ uri },
 );
 
 if (!page) {
-    return new Response("Page Not Found", { status: 404 });
+	return new Response("Page Not Found", { status: 404 });
 }
-
 ---
 
 <Layout title={page.title}>

@@ -3,29 +3,29 @@ import Layout from "@/layouts/Layout.astro";
 import { fetchGraphQL } from "@/utils/graphqlClient";
 
 type LocationNode = {
-  slug: string;
-  title: string;
-  aoDetails: {
-    active: boolean;
-    aoAddress: string;
-    aoAddressLabel: string;
-    aoDetails: string;
-  };
-  featuredImage: {
-    node: {
-      mediaItemUrl: string;
-    };
-  } | null;
+	slug: string;
+	title: string;
+	aoDetails: {
+		active: boolean;
+		aoAddress: string;
+		aoAddressLabel: string;
+		aoDetails: string;
+	};
+	featuredImage: {
+		node: {
+			mediaItemUrl: string;
+		};
+	} | null;
 };
 
 type Locations = {
-  aOs: {
-    nodes: LocationNode[];
-  };
+	aOs: {
+		nodes: LocationNode[];
+	};
 };
 
 const { aOs }: Locations = await fetchGraphQL(
-  `
+	`
   query NewQuery {
     aOs {
       nodes {
