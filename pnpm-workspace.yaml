@@ -1,1 +1,5 @@
-minimumReleaseAge: 10080 # 1 week; helps mitigate supply chain attacks
+minimumReleaseAge: 10080
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
